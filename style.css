@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: AmaticSC-Bold;
+  src: url(fonts/Amatic_SC/AmaticSC-Bold.ttf);
+}
+
+@font-face {
+  font-family: AmaticSC-Regular;
+  src: url(fonts/Amatic_SC/AmaticSC-Regular.ttf);
+}
+
+@font-face {
+  font-family: Comfortaa-VariableFont_wght;
+  src: url(fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf);
+}
+
+button {
+  cursor: pointer;
+  font-size: 20px;
+  height: 40px;
+  text-decoration: none;
+  font-family: AmaticSC-Bold;
+  font-weight: bold;
+  -webkit-box-shadow: 0 3px #999;
+          box-shadow: 0 3px #999;
+}
+
+button:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: 0 1px #666;
+          box-shadow: 0 1px #666;
+}
+
+.background {
+  min-height: 100vh;
+  background: linear-gradient(135deg, orange 0%, #ff008a 50%, purple 100%);
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-box {
+  background-color: #FFFFFF;
+  max-width: 1200px;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header {
+  width: 100%;
+  font-size: 24px;
+  font-family: AmaticSC-Regular;
+}
+
+header h1 {
+  font-size: 50px;
+  text-align: center;
+  font-family: AmaticSC-Bold;
+}
+
+header h1 span {
+  color: orange;
+}
+
+header nav {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 20px;
+}
+
+header nav ul li .btn-nav {
+  width: 40px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+header nav ul li .btn-nav:hover {
+  background: linear-gradient(135deg, orange 0%, #ff008a 50%, purple 100%);
+  color: #FFFFFF;
+}
+
+header nav ul li .active {
+  background: linear-gradient(135deg, orange 0%, #ff008a 50%, purple 100%);
+  color: #FFFFFF;
+}
+
+header nav ul li:not(:first-child) {
+  margin-left: 10px;
+}
+
+header .settings {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .settings .length-box {
+  margin-left: 20px;
+  width: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .settings .length-box button {
+  width: 40px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+header .settings .length-box .btn-minus:hover {
+  background: orange;
+  color: #FFFFFF;
+}
+
+header .settings .length-box .btn-plus:hover {
+  background: purple;
+  color: #FFFFFF;
+}
+
+main {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 20px 0;
+  padding: 20px 0;
+  border-top: 2px solid #ff008a;
+  border-bottom: 2px solid #ff008a;
+  font-family: Comfortaa-VariableFont_wght;
+}
+
+main .task {
+  width: 100%;
+  display: none;
+}
+
+main .task h2 {
+  font-size: 26px;
+}
+
+main .task p {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+main .task .array-box {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto 0 auto;
+  padding: 20px;
+  background-color: orange;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+main .task .array-box_display {
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #FFFFFF;
+  font-size: 30px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+main .task .array-box_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .task .array-box_buttons button {
+  margin-top: 20px;
+  color: #FFFFFF;
+  background-color: purple;
+}
+
+main .task .array-box_buttons .btn_array-generate-full {
+  width: 100%;
+  border-radius: 10px;
+}
+
+main .task .array-box_buttons .btn_array-generate {
+  border-radius: 10px 0 0 10px;
+  width: 50%;
+}
+
+main .task .array-box_buttons .btn_array-execute {
+  border-radius: 0 10px 10px 0;
+  width: 50%;
+}
+
+footer {
+  width: 100%;
+  min-height: 50px;
+  font-size: 20px;
+  font-family: AmaticSC-Regular;
+  text-align: end;
+  margin: auto 0 0 0;
+  position: relative;
+}
+
+footer a {
+  color: purple;
+}
+
+footer .Fozlush {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 25px);
+  background-image: url(https://avatars.githubusercontent.com/u/84021669?v=4);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.hidden {
+  -webkit-transition-duration: 0s !important;
+          transition-duration: 0s !important;
+  visibility: hidden;
+}
+
+.active-tab {
+  display: block !important;
+}
+/*# sourceMappingURL=style.css.map */
