@@ -224,6 +224,10 @@ main .task .array-box_display {
   border-radius: 10px;
 }
 
+main .task .array-box_result {
+  margin-top: 10px;
+}
+
 main .task .array-box_buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -249,6 +253,43 @@ main .task .array-box_buttons .btn_array-generate {
 main .task .array-box_buttons .btn_array-execute {
   border-radius: 0 10px 10px 0;
   width: 50%;
+}
+
+.settings12 {
+  margin-top: 20px;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.settings12 .n-span {
+  font-weight: bold;
+}
+
+.settings12 .n-setbox {
+  margin-left: 20px;
+  width: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.settings12 .n-setbox button {
+  width: 40px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 footer {
