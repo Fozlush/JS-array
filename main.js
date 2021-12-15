@@ -66,7 +66,7 @@ document.querySelector('.btn-run1').onclick = function(){
             array.push(a);
         }
     }
-    document.querySelector('.display1').innerText = array;
+    document.querySelector('.display1').innerText = array.join(' ');
 }
 
 //Задача 2
@@ -82,7 +82,7 @@ document.querySelector('.btn-run2').onclick = function(){
             array.push(a);
         }
     }
-    document.querySelector('.display2').innerText = array;
+    document.querySelector('.display2').innerText = array.join(' ');
 }
 
 //Задача 3
@@ -108,7 +108,7 @@ document.querySelector('.btn-run3').onclick = function(){
         }
         console.log(one)
     }
-    document.querySelector('.display3').innerText = array;
+    document.querySelector('.display3').innerText = array.join(' ');
 }
 
 //Задача 4
@@ -119,7 +119,7 @@ document.querySelector('.btn-run4-1').onclick = function(){
         a = getRandomInt();
         array.push(a);
     }
-    document.querySelector('.display4-1').innerText = array;
+    document.querySelector('.display4-1').innerText = array.join(' ');
     document.querySelector('.display4-2').innerText = '';
 }
 document.querySelector('.btn-run4-2').onclick = function(){
@@ -140,7 +140,7 @@ document.querySelector('.btn-run5-1').onclick = function(){
         a = getRandomInt();
         array.push(a);
     }
-    document.querySelector('.display5-1').innerText = array;
+    document.querySelector('.display5-1').innerText = array.join(' ');
     document.querySelector('.display5-2').innerText = '';
 }
 document.querySelector('.btn-run5-2').onclick = function(){
@@ -167,7 +167,7 @@ document.querySelector('.btn-run6-1').onclick = function(){
         a = getRandomInt();
         array.push(a);
     }
-    document.querySelector('.display6-1').innerText = array;
+    document.querySelector('.display6-1').innerText = array.join(' ');
     document.querySelector('.display6-2').innerText = '';
 }
 document.querySelector('.btn-run6-2').onclick = function(){
@@ -197,7 +197,7 @@ document.querySelector('.btn-run7-1').onclick = function(){
         a = getRandomInt();
         array.push(a);
     }
-    document.querySelector('.display7-1').innerText = array;
+    document.querySelector('.display7-1').innerText = array.join(' ');
     document.querySelector('.display7-2').innerText = '';
 }
 document.querySelector('.btn-run7-2').onclick = function(){
@@ -218,7 +218,7 @@ document.querySelector('.btn-run8-1').onclick = function(){
         a = getRandomInt();
         array.push(a);
     }
-    document.querySelector('.display8-1').innerText = array;
+    document.querySelector('.display8-1').innerText = array.join(' ');
     document.querySelector('.display8-2').innerText = '';
 }
 document.querySelector('.btn-run8-2').onclick = function(){
@@ -231,7 +231,7 @@ document.querySelector('.btn-run8-2').onclick = function(){
     document.querySelector('.display8-2').innerText = result;
 }
 
-//Задача 9 ---НЕ ГОТОВО
+//Задача 9
 document.querySelector('.btn-run9-1').onclick = function(){
     array = [];
     for(i = 0; i < length; i++){
@@ -239,12 +239,57 @@ document.querySelector('.btn-run9-1').onclick = function(){
         a = getRandomInt();
         array.push(a);
     }
-    document.querySelector('.display9-1').innerText = array;
+    document.querySelector('.display9-1').innerText = array.join(' ');
     document.querySelector('.display9-2').innerText = '';
 }
 document.querySelector('.btn-run9-2').onclick = function(){
-    
-    document.querySelector('.display9-2').innerText = result;
+    let arrcopy = array.slice();
+    let err = 0;
+    let result;
+    arrcopy.unshift(-1, -1);
+    arrcopy.push(10, 10);
+    arrcopy.forEach(function(element, index){
+        if(element - arrcopy[index - 1] < 0){
+            err++;
+        }
+    })
+    if(err === 0){
+        arrcopy.splice(0, 2);
+        arrcopy.splice(-1, 1);
+        arrcopy.splice(-1, 1);
+        result = arrcopy;
+    }else if(err > 1){
+        result = 'Невозможно';
+    }else if(err === 1){
+        let err2 = 0;
+        arrcopy.forEach(function(element, index){
+            if(err2 === 0){
+                let elcopy = element;
+                arrcopy.splice(index, 1)
+                let err3 = 0;
+                arrcopy.forEach(function(element, index){
+                    if(element - arrcopy[index - 1] < 0){
+                        err3++;
+                    }
+                })
+                if(err3 === 0){
+                    arrcopy.splice(0, 2);
+                    arrcopy.splice(-1, 1);
+                    arrcopy.splice(-1, 1);
+                    result = arrcopy;
+                    err2++;
+                }else if(err3 === 1){
+                    arrcopy.splice(index, 0, elcopy)
+                    result = 'Невозможно';
+                }
+            }
+        })
+    }
+    if(result === 'Невозможно'){
+        document.querySelector('.display9-2').innerText = result;
+    }else{
+        document.querySelector('.display9-2').innerText = result.join(' ');
+    }
 }
 
 //Задача 10
@@ -255,7 +300,7 @@ document.querySelector('.btn-run10-1').onclick = function(){
         a = getRandomInt();
         array.push(a);
     }
-    document.querySelector('.display10-1').innerText = array;
+    document.querySelector('.display10-1').innerText = array.join(' ');
     document.querySelector('.display10-2').innerText = '';
 }
 document.querySelector('.btn-run10-2').onclick = function(){
@@ -284,7 +329,7 @@ document.querySelector('.btn-run10-2').onclick = function(){
             result.splice(mini, 1, max)
         }
     })
-    document.querySelector('.display10-2').innerText = result;
+    document.querySelector('.display10-2').innerText = result.join(' ');
 }
 
 //Задача 11
@@ -295,7 +340,7 @@ document.querySelector('.btn-run11-1').onclick = function(){
         a = getRandomInt();
         array.push(a);
     }
-    document.querySelector('.display11-1').innerText = array;
+    document.querySelector('.display11-1').innerText = array.join(' ');
     document.querySelector('.display11-2').innerText = '';
 }
 document.querySelector('.btn-run11-2').onclick = function del11(){
@@ -315,7 +360,7 @@ document.querySelector('.btn-run11-2').onclick = function del11(){
         array = array.filter(item => !del.includes(item));
         del11();
     }
-    document.querySelector('.display11-2').innerText = array;
+    document.querySelector('.display11-2').innerText = array.join(' ');
 }
 
 //Задача 12
@@ -355,12 +400,12 @@ document.querySelector('.btn-run12-1').onclick = function(){
             a = b;
             b = c;
         }
-        array.push(a, ' - ', b, ' , ');
+        array.push(a, '-', b, ', ');
     }
     array.splice(-1, 1);
     document.querySelector('.display12-1').innerText = array.join('');
     array.forEach(function(element, index){
-        if(element === ' - ' || element === ' , '){
+        if(element === '-' || element === ', '){
             array.splice(index, 1)
         }
     })
@@ -370,15 +415,16 @@ document.querySelector('.btn-run12-2').onclick = function(){
     let arrcopy = array.slice();
     let result;
     let start = 99;
+    let startI;
     let finish;
     arrcopy.forEach(function(element, index){
         if(index % 2 === 0 && element - start < 0){
             start = element;
             startI = index;
             finish = arrcopy[index + 1];
-            arrcopy.splice(index, 2)
         }
     })
+    arrcopy.splice(startI, 2)
     for(i = 0; i < intCount - 1; i++){
         arrcopy.forEach(function(element, index){
             if(index % 2 === 0 && element <= finish){
